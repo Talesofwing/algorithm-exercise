@@ -1,4 +1,4 @@
-# Sort
+# Sorting
 
 In this section, various sorting algorithms have been implemented. Specific examples can be found in different folders.
 

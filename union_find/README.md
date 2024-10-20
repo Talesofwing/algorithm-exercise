@@ -1,9 +1,5 @@
 # union-find
 
-### Enviroment
-
-- C++ 20
-
 ### Introduction
 主要用於管理一系列不相交的集合，並能高效地實現兩個主要操作
 

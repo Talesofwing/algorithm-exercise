@@ -1,12 +1,10 @@
 # Algorithm & Data Structure
 
-算法在編程領域中扮演著至關重要的角色。特別是在大型項目的開發中，對性能和內存的要求極為嚴格。掌握優秀的編程技巧及具備深入的「優化」思維對於這類項目的開發至關重要，它們可以在許多方面提供巨大的幫助。
+Algorithms play a crucial role in the field of programming, especially in the development of large projects where performance and memory requirements are extremely stringent. Mastering excellent programming skills and possessing a deep understanding of `potimization` thinking are essential for the development of such projects, as they can provide significant assistance in many aspects.
 
-就個人而言，筆者目前的目標是在[AtCoder](https://atcoder.jp/home)平台上達到600分！
+Moreover, another core element closely intertwined with algorithms is data structures. Data structures involve the methods of storing and processing data, including classic structures such as `Stack` and `Queue`. Data structures provide the foundation for algorithms, while algorithms represent the effective utilization and application of data structures. The two are interdependent and together form the essence of program design.
 
-此外，與算法緊密交織的另一個核心元素是數據結構。數據結構涉及到數據的存儲和處理方法，包括了像是先進後出的棧和先進先出的隊列等經典結構。數據結構為算法提供了基礎，而算法則是對數據結構的有效利用和應用。這兩者相互依存，共同構築了程序設計的精髓。
-
-以[廣度優先搜索（BFS）](bfs_demos/README.md)算法為例，它是基於先進先出（FIFO）原則的數據結構——通常是隊列（Queue）——來執行其搜索過程。這種方法能夠高效地遍歷圖形或樹狀結構，展示了數據結構在算法設計中的關鍵作用。
+Taking the [Breadth-First Search（BFS）](bfs_demos/README.md) algorithm as an example, it is based on the First In, FIrst Out(FIFO) principle of data structures - typically a `queue` - to execute its search process. This approach efficiently traverses graphs or tree structures, demonstrating the critical role of data structures in algorithm design.
 
 ## Resources
 
@@ -14,4 +12,4 @@
 - [AtCoder - 競プロ典型90問](https://atcoder.jp/contests/typical90)
 - [AtCoder版! 蟻本(初級編)](https://qiita.com/drken/items/e77685614f3c6bf86f44#0-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
 - [LeetCode](https://leetcode.com/)
-- [VISUALGO - Sorting](https://visualgo.net/zh/sorting)
+- [VISUALGO - Sorting](https://visualgo.net/en/sorting)
