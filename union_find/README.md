@@ -1,25 +1,25 @@
 # union-find
 
-### Introduction
-主要用於管理一系列不相交的集合，並能高效地實現兩個主要操作
+The Union-Find data structure, also know as Disjoint Set Union(DSU), is primarily used to manage a collection of [disjoint sets](https://en.wikipedia.org/wiki/Disjoint_sets) and efficiently supports two key operations:
 
-- union(合併): 將兩個不相交的集合合併為一個集合
-- find(查找): 用於查找某個元素所在集合的代表元素，通常用於判定兩個元素是否屬於同一個集合
+- union: Merges two disjoint sets into one set
+- find: Finds the representative element of the set containing a specific element, typically used to determine if two elements belong to the same set.
 
-union-find通常使用一個整數數組來表示，其中每個元素的值指向其父節點，如果元素是集合的根節點，則指向其自身。例如有
+Union-Find typically uses an integer array to represent the sets, where each element's value points to its parent node. If an element is the root of the set, it points to itself.
+For example, consider the following:
 
-|索引|0|1|2|3|4|5|
+|Index|0|1|2|3|4|5|
 |-|-|-|-|-|-|-|
-|父節點|1|2|1|2|5|2|
+|Parent Node|1|2|1|2|5|2|
 
-一般可用於
-1. 圖的連通性
-2. 最小生成樹
-3. 動態連通性問題
+Commonly used in several scenarios, including:
+1. Graph Connectivity
+2. Minimum Spanning Tree (MST)
+3. Dynamic Connectivity Problem
 
-在實現時一般會使用兩種方式進行優化
-1. 路徑壓縮(Path Compression): 在Find操作中實現，有效減少樹的高度，加快未來操作的速度。
-2. 按秩合併(Union by Rank)：用於在Union操作中將較小的樹連接到較大的樹上，進一步減少樹的高度。
+To optimize Union-Find operations, two key techniques are typically used:
+1. Path Compression: Applied during the find operation, this technique flattens the structure of the tree by making nodes point directly to the root, reducing the height of the tree and speeding up future operations.
+2. Union by Rank: Used during the union operation, this method ensures that the tree with a lower rank (or smaller height) is attached under the root of the tree with a higher rank. This minimizes the growth of the tree's height, thus improving the efficiency of the structure over time.
 
 ```c++
 Initialize(parent, size):
@@ -48,4 +48,4 @@ Union(node1, node2):
 ### Examples
 - [AtCoder](https://atcoder.jp/contests/atc001/tasks/unionfind_a)
 
-題目中有多個節點，每個節點的父節點都不同。需求是找到節點的最上根節點，以及能合併兩個組節點(樹)。每一次的Find都會將其設置成最上根節點，且合併時會按照秩(rank)進行合併，使樹的高度最小化。
+The problem involves multiple nodes, where each node has a different parent node. The task is to find the root (the topmost parent) of a node and merge two groups of nodes (trees). Each time the `Find` operation is called, the node should be set to its root. When merging two groups, the merge should be done based on rank to minimize the height of the resulting tree.
