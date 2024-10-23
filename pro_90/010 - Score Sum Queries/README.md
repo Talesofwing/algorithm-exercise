@@ -1,13 +1,3 @@
 # Score Sum Queries(★2)
 
-### Environment
-
-- C++ 20
-
-### Introduction
-
-因為N,Q的最大值為100,000，在極端的情況下，所需的計算量可能高達10,000,000,000次。為了有效處理這樣龐大的計算需求，可以運用「累積和」算法。這種算法特別適用於計算數列中某一區間的總和，以更高效的方式解決問題。
-
-### References
-
-- [AtCoder - Score Sum Queries(★2)](https://atcoder.jp/contests/typical90/tasks/typical90_j)
+Since the maximum values of $N$ and $Q$ can reach 100,000, in extreme cases, the required number of calculations may be as high as 10,000,000,000. To efficiently handle such a large computational demand, we can use the [cumulative sum algorithm](https://en.wikipedia.org/wiki/CUSUM). This algorithm is particularly suitable for calculating the sum of a specific interval in a sequence, providing a more efficient way to solve the problem.
