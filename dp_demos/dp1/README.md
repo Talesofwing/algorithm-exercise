@@ -1,7 +1,5 @@
 # Dynamic Programming 001
 
-### References
-
 [AtCoder D - 禁止された数字](https://atcoder.jp/contests/abc007/tasks/abc007_4)
 
 The problem can be decomposed into the following subproblems:
