@@ -1,16 +1,13 @@
 # cumulative sum (累積和)
 
-### Environment
-- C++ 20
+The cumulative sum algorithm maintains an additional array where each element stores the cumulative sum of the original array from the beginning to the current index `i`. Once the cumulative sum array is constructed, it allows for quick computation of the sum of elements within any range of the original array.
 
-### Introduction
+For a given range $[left, right]$, the cumulative sum within that range can be obtained using $sum[right] - sum[left - 1]$. If left is 0, the cumulative sum for the range is simply $sum[right]$.
 
-累積和算法通過額外維護一個數組，該數組的每個元素保存了原始數組從開始到當前索引'i'的元素的累積和。一旦累積和數組被構建，就可以快速計算原始數組任意區間內元素的總和。對於給定區間`[left, right]`，區間內元素的累積和可以通過`sum[right] - sum[left - 1]`得出。如果`left`為0，區間的累積和就是`sum[right]`。
-
-這種方法特別適用於需要頻繁進行區間求和操作的場景，因為算法將區間求和的時間複雜度從O(n)降低到了O(1)。
+This method is particularly suitable for scenarios where frequent range sum operations are required, as it reduces the time complexity of range sum queries from $O(n)$ to $O(1)$.
 
 ```c++
-// 假設有數組為arr
+// Assuming there is an array named arr
 sum[0] = arr[0];
 sum[1] = arr[0] + arr[1];
 ...
@@ -21,6 +18,6 @@ sum[i] = arr[0] + arr[1] + ... + arr[i];
 
 - [AtCoder](https://atcoder.jp/contests/abc328/tasks/abc328_c)
 
-該題目需要對「兩字符相同」的次數進行求和，所以適用於累積和算法。以題目「入力例１」為例，有字符串`mississippi`，得累積和數組`{0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3}`。假設區間為[3, 9]，**注意: 這裏假設數組起始為1**，得該區間的累積和為`2-0 = 2`，所以答案為2。
+The problem requires summing the occurrences of "two identical characters," making it suitable for the cumulative sum algorithm.
 
-簡單來說，就是在該區間內的變化次數。該區間起始值為0，有兩組相同的字符，相當於有兩次的變化，所以將`區間最右的變化次數-區間最左的變化次數`就為`區間內的變化次數`。
+Taking "Sample Input 1" as an example, we have the string `mississippi`, which results in the cumulative sum array `{0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3}`. Assuming the interval is $[3, 9]$(assuming the array starts at 1), the cumulative sum for this interval is $2 - 0 = 2$, so the answer is 2.
