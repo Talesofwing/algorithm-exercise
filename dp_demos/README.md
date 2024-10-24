@@ -1,4 +1,5 @@
 # Dynamic Programming
 
-### Introduction
-動態規劃(Dynamic Programming)主要用於解決具有重疊子問題和最優子結構特性的問題。通過將複雜問題分解為更小的子問題來工作，並存儲這些子問題的解，以避免重複計算。DP的難點在於如何將問題分解為子問題。
+Dynamic Programming(DP) is primarily used to solve problems that exhibit overlapping subproblems and optimal substructure. It works by breaking down complex problems into smaller subproblems and storing the solutions to these subproblems to avoid redundant computations.
+
+The challenge in DP lies in how to decompose the problem into subproblems.
