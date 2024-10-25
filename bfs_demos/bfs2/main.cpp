@@ -10,8 +10,6 @@ int R, C;
 int main() {
     // from 1 to 50
 
-    
-
     // R : row(行)
     // C : column(列)
     cin >> R >> C;

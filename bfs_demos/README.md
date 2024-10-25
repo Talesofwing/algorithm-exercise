@@ -1,11 +1,10 @@
-# BFS(廣度優先搜索)
+# Breadth First Search(BFS)
 
-### Introduction
-廣度優先搜索(Breadth First Search, BFS)是一種用於遍歷或搜索圖和樹的算法。與DFS不同，BFS通過探索圖的所有鄰接頂點來進行搜索，然後再向外擴展到下一層的鄰接頂點。
+Breadth First Search(BFS) is an algorithm used for traversing or searching graphs and trees. Unlike DFS, BFS explores all adjacent vertices of a graph before expanding to the next level of adjacent vertices.
 
-BFS通常使用隊列來存儲待訪問的頂點。從起始頂點開始，入隊，在循環中出隊並標記，並將其所有未被標記的邻接頂點入隊。
+BFS typically uses a `Queue` to store vertices waiting to be visited. Starting from the initial vertex, it enqueues it, then in a loop dequeues and marks vertices as visited, enqueueing all unmarked adjacent vertices.
 
-需要注意，圖的廣度愈大，隊列中存儲的待訪問節點就會愈多，因此會消耗更多的內存甚至溢出。
+Note that as the graph's breadth increases, more nodes waiting to be visited will be stored in the queue, thus consuming more memory and potentially causing overflow.
 
 ``` cpp
 BFS(start_node):
