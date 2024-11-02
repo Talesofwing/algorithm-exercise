@@ -10,4 +10,4 @@ Bubble sort is a very simple sorting algorithm, but it is not very efficient. It
 3. Steps 1 and 2 are executed n times
 
 ## References
-- [Wiki](https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F)
+- [Wiki](https://en.wikipedia.org/wiki/Bubble_sort)
