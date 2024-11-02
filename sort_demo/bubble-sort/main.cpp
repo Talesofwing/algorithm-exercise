@@ -14,7 +14,7 @@ void BubbleSort(vector<int> arr) {
 	bool swapped = false;
 	rep(i, arr.size() - 1) {
 		swapped = false;
-		rep(j, arr.size() - 1) {
+		rep(j, arr.size() - i - 1) {
 			if (arr[j] > arr[j + 1]) {
 				swap(arr[j], arr[j + 1]);
 				swapped = true;
