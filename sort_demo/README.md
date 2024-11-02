@@ -5,3 +5,4 @@ In this section, various sorting algorithms have been implemented. Specific exam
 ### Contents
 
 1. [Bubble Sort](bubble-sort/)
+2. [Selection Sort](selection-sort/)
