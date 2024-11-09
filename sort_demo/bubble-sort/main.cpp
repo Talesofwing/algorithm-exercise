@@ -10,7 +10,7 @@ using namespace std;
 	Using Bubble Sort to sort an array in ascending order
 */
 
-void BubbleSort(vector<int> arr) {
+void BubbleSort(vector<int>& arr) {
 	bool swapped = false;
 	rep(i, arr.size() - 1) {
 		swapped = false;
@@ -26,10 +26,6 @@ void BubbleSort(vector<int> arr) {
 			break;
 		}
 	}
-
-	rep(i, arr.size()) {
-		cout << arr[i] << " ";
-	}
 }
 
 int main() {
@@ -44,6 +40,10 @@ int main() {
 	}
 
 	BubbleSort(arr);
+
+	rep(i, arr.size()) {
+		cout << arr[i] << " ";
+	}
 
 	return 0;
 }
