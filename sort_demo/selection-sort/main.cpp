@@ -13,7 +13,7 @@ using ll = long long;
 	Using Selection Sort to sort an array in ascending order
 */
 
-void SelectionSort(vector<int> arr) {
+void SelectionSort(vector<int>& arr) {
 	int min = 0, temp = 0;
 	rep(i, arr.size() - 1) {
 		min = i;
@@ -29,10 +29,6 @@ void SelectionSort(vector<int> arr) {
 			arr[i] = temp;
 		}
 	}
-
-	rep(i, arr.size()) {
-		cout << arr[i] << " ";
-	}
 }
 
 int main() {
@@ -47,6 +43,10 @@ int main() {
 	}
 
 	SelectionSort(arr);
+
+	rep(i, arr.size()) {
+		cout << arr[i] << " ";
+	}
 
 	return 0;
 }
