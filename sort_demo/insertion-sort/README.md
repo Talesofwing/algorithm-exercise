@@ -3,6 +3,7 @@
 > - Time Complexity: $O(n^2)$
 > - Space Complexity: $O(1)$
 > - Stability : Yes
+> - Adaptability : Yes
 
 Insertion sort is a simple sorting algorithm. The process is as follows:
 

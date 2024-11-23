@@ -3,6 +3,7 @@
 > - Time Complexity: $O(n^2)$
 > - Space Complexity: $O(1)$
 > - Stability : No
+> - Adaptability : No
 
 Selection sort is a simple sorting algorithm, primarily used for educational purposes to illustrate the basic concepts of sorting. While easy to understand and implement, it's not very efficient with $O(n^2)$ time complexity and is rarely used in practical applications due to the availability of more efficient algorithms. The process is as follows:
 

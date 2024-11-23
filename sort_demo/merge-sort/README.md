@@ -3,6 +3,7 @@
 > - Time Complexity: $O(n\log n)$
 > - Space Complexity: $O(n)$
 > - Stability : Yes
+> - Adaptability : No
 
 Merge sort is a sorting algorithm based on the [divide-and-conquer]((https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm)).
 
