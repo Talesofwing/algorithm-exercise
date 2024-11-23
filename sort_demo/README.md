@@ -40,7 +40,6 @@ Uses a total of 8 tests.
 | Insertion Sort | 100,000   | 5.94s <br> 3.83s(binary search) |
 | Merge Sort     | 1,000,000 | 0.29s(recursive) <br> 0.28s(iterative)  |
 | Quick Sort     | 1,000,000 | 0.12s  |
-|
 
 
 ### Comparison
