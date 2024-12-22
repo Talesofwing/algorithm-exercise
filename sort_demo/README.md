@@ -21,6 +21,7 @@ In every sorting algorithm, there are the following characteristics:
 3. [Insertion Sort](insertion-sort/)
 4. [Merge Sort](merge-sort/)
 5. [Quick Sort](quick-sort/)
+6. [Heap Sort](heap-sort/)
 
 ### Test
 Uses a total of 8 tests.
@@ -33,13 +34,14 @@ Uses a total of 8 tests.
 7. Large Elements Count Test
 8. Boundary Test
 
-| Algorithm | Element Count | Time(second) |
-|     -     |       -       |       -      |
-| Bubble Sort    | 100,000   | 36.29s |
-| Selection Sort | 100,000   | 11.46s |
-| Insertion Sort | 100,000   | 5.94s <br> 3.83s(binary search) |
-| Merge Sort     | 1,000,000 | 0.29s(recursive) <br> 0.28s(iterative)  |
-| Quick Sort     | 1,000,000 | 0.12s  |
+|		Algorithm		| 	Element Count 	|                  Time(second) 			|
+|     		-	 	    |     	  -     	|       				-			      	|
+| Bubble Sort   		| 100,000   		| 36.29s 	   								|
+| Selection Sort		| 100,000   		| 11.46s      								|
+| Insertion Sort 		| 100,000   		| 5.94s <br> 3.83s(binary search) 			|
+| Merge Sort     		| 1,000,000 		| 0.29s(recursive) <br> 0.28s(iterative)  	|
+| Quick Sort     		| 1,000,000 		| 0.12s       								|
+| Heap Sort 	 		| 1,000,000			| 0.26s       								|
 
 
 ### Comparison
