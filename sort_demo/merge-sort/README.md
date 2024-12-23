@@ -19,7 +19,6 @@ Merge sort is generally described as having two main steps:
 The iterative merge sort generally exhibits better performance than the recursive version because it avoids the overhead associated with recursive function calls.
 
 Use Cases:
-
 - Guaranteed O(n log n) time complexity (e.g., large datasets, predictable performance).
 - Stable sorting (preserves the relative order of equal elements).
 
