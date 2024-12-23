@@ -16,5 +16,10 @@ The core idea is to divide the data into sorted and unsorted portions. Each elem
 
 > The example implements a binary search
 
+Insertion Sort is generally used in the following cases:
+- **Small data size**: Time complexity $O(n^2) \to O(n)$
+- **Nearly sorted data**: Adaptive
+- **As a subroutine for other sorting algorithms**: Used for handling subarrays, typically when the size of the subarray is below a certain threshold, insertion sort is applied to improve efficiency.
+
 ## References
 - [Wiki](https://en.wikipedia.org/wiki/Insertion_sort)
