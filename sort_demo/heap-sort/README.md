@@ -20,7 +20,7 @@ The algorithm proceeds as follows.
 
 The example uses max-heap.
 
-Heapsort is preferred when:
+Heap sort is preferred when:
 1. Guaranteed performance is crucial: $O(n\log n)$ time complexity in all cases
 2. Memory is limited: Requires only constant extra space (O(1))
 3. Partial sorting is acceptable: Provides a partially soted array even if interrupted.
