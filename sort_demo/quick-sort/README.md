@@ -85,5 +85,10 @@ Taking the array $[8, 2, 1, 4, 3]$ as an example:
 >
 > Additionally, when the number of elements is below a certain threshold, Insertion Sort is typically used.
 
+
+Quick Sort is generally used for:
+- **Large datasets**: With an average time complexity of $O(n\log n)$, it is very fast.
+- **Random data**: Performs best when dealing with random data.
+
 ## References
 - [Wiki](https://en.wikipedia.org/wiki/Quicksort)
