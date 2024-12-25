@@ -9,6 +9,8 @@ Counting Sort is a non-comparative sorting algorithm that does not rely on numer
 
 It is only suitable for integers or data that can be mapped to an integer range.
 
+The core idea is to create an array ranging from 0 to max and map the values into the array. This allows for fast sorting, but the drawback is that it requires a significant amount of additional memory.
+
 The algorithm proceeds as follows.
 
 1. **Find the Maximum Value**: Identify the largest element in the input array.
