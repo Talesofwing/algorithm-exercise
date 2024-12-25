@@ -11,6 +11,8 @@ It is primarily suitable for integers, strings, or data that can be numerically 
 
 Additionally, special handling is necessary when negative numbers are present.
 
+The main idea is to start from the least significant digit (units place) and progressively sort the values.
+
 The algorithm proceeds as follows.
 
 1. Identify the maximum value in the dataset and calculate its digit length.
