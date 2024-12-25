@@ -22,6 +22,9 @@ In every sorting algorithm, there are the following characteristics:
 4. [Merge Sort](merge-sort/)
 5. [Quick Sort](quick-sort/)
 6. [Heap Sort](heap-sort/)
+7. [No] [Counting Sort](counting-sort/)
+8. [No] [Bucket Sort](bucket-sort/)
+9. [Radix Sort](radix-sort/)
 
 ### Test
 Uses a total of 8 tests.
@@ -42,7 +45,7 @@ Uses a total of 8 tests.
 | Merge Sort     		| 1,000,000 		| 0.29s(recursive) <br> 0.28s(iterative)  	|
 | Quick Sort     		| 1,000,000 		| 0.12s       								|
 | Heap Sort 	 		| 1,000,000			| 0.26s       								|
-
+| Radix Sort			| 1,000,000			| 0.09s										|
 
 ### Comparison
 #### Bubble Sort & Selection Sort
