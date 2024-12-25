@@ -18,6 +18,8 @@ The algorithm proceeds as follows.
 3. Collect the sorted elements in order after each round to form a new array.
 4. Repeat steps 2 and 3 until the most significant digit is processed.
 
+> The example uses [Counting Sort](../counting-sort)
+
 Radix sort is preferred when:
 1. When the digit length of the data is relatively small
 
