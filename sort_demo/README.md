@@ -23,7 +23,7 @@ In every sorting algorithm, there are the following characteristics:
 5. [Quick Sort](quick-sort/)
 6. [Heap Sort](heap-sort/)
 7. [Counting Sort](counting-sort/)
-8. [No] [Bucket Sort](bucket-sort/)
+8. [Bucket Sort](bucket-sort/)
 9. [Radix Sort](radix-sort/)
 
 ### Test
@@ -46,6 +46,7 @@ Uses a total of 8 tests.
 | Quick Sort     		| 1,000,000 		| 0.12s       								|
 | Heap Sort 	 		| 1,000,000			| 0.26s       								|
 | Counting Sort			| 1,000,000			| 0.04s										|
+| Bucket Sort			| 1,000,000			| 0.05s										|
 | Radix Sort			| 1,000,000			| 0.09s										|
 
 ### Comparison
