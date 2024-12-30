@@ -25,6 +25,7 @@ In every sorting algorithm, there are the following characteristics:
 7. [Counting Sort](counting-sort/)
 8. [Bucket Sort](bucket-sort/)
 9. [Radix Sort](radix-sort/)
+10. [Intro Sort](intro-sort/)
 
 ### Test
 Uses a total of 8 tests.
@@ -48,6 +49,7 @@ Uses a total of 8 tests.
 | Counting Sort			| 1,000,000			| 0.04s										|
 | Bucket Sort			| 1,000,000			| 0.05s										|
 | Radix Sort			| 1,000,000			| 0.09s										|
+| Intro Sort			| 1,000,000			| 0.11s										|
 
 ### Comparison
 #### Bubble Sort & Selection Sort
@@ -80,3 +82,5 @@ However, in some cases, `Merge Sort` performs better, such as in:
 `Radix Sort` breaks the sorting task into multiple stages, with each stage focusing on a specific digit of the data. By using `Counting Sort` at each stage, the process remains efficient without encountering issues related to excessively large data ranges.
 
 `Counting Sort` is typically only used for integers or data that can be mapped to an integer range. `Radix Sort`, on the other hand, can be extended to handle strings or other data types that can be represented numerically.
+
+#### Introsort
