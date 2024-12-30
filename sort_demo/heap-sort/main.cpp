@@ -50,7 +50,6 @@ void MaxHeapify(vector<int>& arr, int start, int end) {
 void HeapSort(vector<int>& arr) {
 	for (int i = arr.size() / 2 - 1; i >= 0; --i) {
 		MaxHeapify(arr, i, arr.size() - 1);
-		cout << arr << endl;
 	}
 
 	for (int i = arr.size() - 1; i > 0; i--) {
