@@ -1,12 +1,6 @@
 #include <iostream>
-#include <algorithm>
-#include <map>
+#include <unordered_set>
 #include <vector>
-#include <string>
-#include <bitset>
-#include <cmath>
-#include <queue>
-#include <set>
 
 using namespace std;
 
@@ -20,9 +14,26 @@ using ll = long long;
 #define rep2(i, s, n) for (int i = s; i < n; ++i)
 
 int main() {
-    cin.tie(nullptr);
-    ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	ios::sync_with_stdio(false);
 
+	int N;
+	cin >> N;
 
-    return 0;
+	unordered_set<string> S;
+	vector<int> records;
+	rep(i, N) {
+		string s;
+		cin >> s;
+		if (!S.contains(s)) {
+			S.insert(s);
+			records.push_back(i + 1);
+		}
+	}
+
+	rep(i, records.size()) {
+		cout << records[i] << endl;
+	}
+
+	return 0;
 }
