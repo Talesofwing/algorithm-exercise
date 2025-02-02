@@ -1,6 +1,6 @@
 # Not Too Bright(2★)
 
-The maximum number of LEDs when the number of cells is odd is $(N+1)/2$, and when it's even, it $(N/2)$. Using the properties of `int`, we get:
+The maximum number of LEDs when the number of cells is odd is $(N+1)/2$, and when it's even, it is $(N/2)$. Using the properties of `int`, we get:
 
 ```cpp
 int answer = ((H + 1) / 2) * ((W + 1) / 2);
