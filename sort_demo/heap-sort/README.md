@@ -1,7 +1,7 @@
 # Heap-Sort
 
 > - Time Complexity: $O(n \log n)$
-> - Space Complexity: $O(n)$
+> - Space Complexity: $O(1)$
 > - Stability : No
 > - Adaptability : No
 

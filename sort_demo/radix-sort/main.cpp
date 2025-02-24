@@ -62,15 +62,18 @@ void CountingSort(vector<int>& arr, const int exp) {
 		count[i] += count[i - 1];
 	}
 
+	// Reversing is to ensure that the number of digits remains the same, but larger values are placed at the back.
 	for (int i = arr.size() - 1; i >= 0; --i) {
 		int digit = abs((arr[i]) / exp % 10);
 		output[count[digit] - 1] = arr[i];
 		count[digit]--;
 	}
 
-	for (int i = 0; i < arr.size(); ++i) {
-		arr[i] = output[i];
-	}
+	// for (int i = 0; i < arr.size(); ++i) {
+	// 	arr[i] = output[i];
+	// }
+	// copy(output.begin(), output.end(), arr.begin());
+	move(output.begin(), output.end(), arr.begin());
 }
 
 void RadixSort(vector<int>& arr) {
@@ -87,6 +90,7 @@ void RadixSort(vector<int>& arr) {
 		int m = GetMax(positives);
 		for (int exp = 1; m / exp > 0; exp *= 10) {
 			CountingSort(positives, exp);
+			cout << positives << endl;
 		}
 	}
 
@@ -217,7 +221,10 @@ int main() {
 	cin.tie(nullptr);
 	ios::sync_with_stdio(false);
 
-	RunTest();
+	// RunTest();
+	vector<int> arr = {79, 3, 42, 2};
+	RadixSort(arr);
+	cout << arr << endl;
 
 	return 0;
 }

@@ -38,18 +38,18 @@ Uses a total of 8 tests.
 7. Large Elements Count Test
 8. Boundary Test
 
-|		Algorithm		| 	Element Count 	|                  Time(second) 			|
-|     		-	 	    |     	  -     	|       				-			      	|
-| Bubble Sort   		| 100,000   		| 36.29s 	   								|
-| Selection Sort		| 100,000   		| 11.46s      								|
-| Insertion Sort 		| 100,000   		| 5.94s <br> 3.83s(binary search) 			|
-| Merge Sort     		| 1,000,000 		| 0.29s(recursive) <br> 0.28s(iterative)  	|
-| Quick Sort     		| 1,000,000 		| 0.12s       								|
-| Heap Sort 	 		| 1,000,000			| 0.26s       								|
-| Counting Sort			| 1,000,000			| 0.04s										|
-| Bucket Sort			| 1,000,000			| 0.05s										|
-| Radix Sort			| 1,000,000			| 0.09s										|
-| Intro Sort			| 1,000,000			| 0.11s										|
+|		Algorithm		| 	Element Count 	|                  			Time(second)		 				|
+|     		-	 	    |     	  -     	|       						-						      	|
+| Bubble Sort   		| 100,000   		| 36.29s					 	   								|
+| Selection Sort		| 100,000   		| 11.46s      													|
+| Insertion Sort 		| 100,000   		| 5.94s <br> 3.83s(binary search) <br> 0.13s(memmove) 			|
+| Merge Sort     		| 1,000,000 		| 0.29s(recursive) <br> 0.28s(iterative)  						|
+| Quick Sort     		| 1,000,000 		| 0.12s       													|
+| Heap Sort 	 		| 1,000,000			| 0.26s       													|
+| Counting Sort			| 1,000,000			| 0.04s															|
+| Bucket Sort			| 1,000,000			| 0.05s															|
+| Radix Sort			| 1,000,000			| 0.07s															|
+| Intro Sort			| 1,000,000			| 0.11s															|
 
 ### Comparison
 #### Bubble Sort & Selection Sort
@@ -68,13 +68,25 @@ This is because each element only needs to be compared with a small number of pr
 
 In conclusion, under the worst-case scenario, the performance of all three algorithms is similar. However, in more ordered datasets, `Insertion Sort` performs the best, which is why it is often chosen over the other two.
 
-#### Merge Sort & Quick Sort
+#### Merge Sort & Quick Sort & Heap Sort
 
-In general, `Quick Sort` performs better than `Merge Sort` because `Quick Sort` requires less memory.
+|         Features        |   Quick Sort  |   Merge Sort  |   Heap Sort   |
+|            -            |        -      |        -      |       -       |
+| Average Time Complexity | $O(n \log n)$ | $O(n \log n)$ | $O(n \log n)$ |
+|  Worst Time Complexity  |    $O(n^2)$   | $O(n \log n)$ | $O(n \log n)$ |
+|     Space Complexity    |  $O(\log n)$  |     $O(n)$    |     $O(1)$    |
+|        Stability        |       No      |      Yes      |      Yes      |
 
-However, in some cases, `Merge Sort` performs better, such as in:
-- External sorting
-- When stability is required"
+- Quick Sort
+	- High-speed requirements
+	- Large data volume
+- Merge Sort
+	- Need for stability
+	- External sorting
+	- Guaranteed worst-case performance
+- Heap Sort
+	- Limited Space
+	- Guaranteed worst-case performance
 
 #### Counting Sort & Radix Sort
 `Counting Sort` relies heavily on the range of data. If the data range is too large, it requires a significant amount of additional space, potentially exceeding memory limits.

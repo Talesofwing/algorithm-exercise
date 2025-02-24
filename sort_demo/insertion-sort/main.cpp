@@ -45,9 +45,10 @@ void InsertionSort_BinarySearch(vector<int>& arr) {
 			}
 		}
 
-		for (int j = i - 1; j >= left; --j) {
-			arr[j + 1] = arr[j];
-		}
+		// for (int j = i - 1; j >= left; --j) {
+		// 	arr[j + 1] = arr[j];
+		// }
+		memmove(&arr[left + 1], &arr[left], sizeof(int) * (i - left));
 		arr[left] = temp;
 	}
 }

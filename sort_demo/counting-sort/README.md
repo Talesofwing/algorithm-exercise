@@ -16,7 +16,8 @@ The algorithm proceeds as follows.
 1. **Find the Maximum Value**: Identify the largest element in the input array.
 2. **Initialize the Counting Array**: Create a counting array `count` with a size of `max + 1` and initialize all values to 0.
 3. **Count the Elements**: Traverse the input array, and for each element `x`, increment `count[x]` by 1.
-4. **Calculate Cumulative Counts**: Traverse the counting array to compute the cumulative count for each element. `count[i]` will store the total number of elements less than or equal to `i`.
+4. **Calculate Cumulative Counts**:  Iterate through the count array and compute the cumulative count for each element using the formula:
+`count[x] = count[x - 1] + count[x]`
 5. **Build the Sorted Array**: For each element `x` in the input array, use `count[x]` to determine its position in the sorted array. Place `x` at `output[count[x] - 1]` and decrement `count[x]` by 1.
 
 Heap sort is preferred when:
