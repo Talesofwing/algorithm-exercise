@@ -3,8 +3,10 @@
 The modulo operation satisfies the following equality:
 
 $$
-(a + b + c) \% d = 0 \\[5px]
-((a \% d) + (b \% d) + (c \% d)) \% d = 0
+\displaylines {
+	(a + b + c) \\% d = 0 \\
+	((a \\% d) + (b \\% d) + (c \\% d)) \\% d = 0
+}
 $$
 
 Since $𝑑=46$, we can create three arrays of length 46 to record the frequency of each remainder.
