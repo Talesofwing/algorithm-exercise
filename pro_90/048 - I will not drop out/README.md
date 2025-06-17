@@ -1,14 +1,5 @@
-# I Love 46(★3)
+# I will not drop out(★3)
 
-The modulo operation satisfies the following equality:
+First, record the partial points as well as the difference between the full score and the partial points. Then, sort these scores in descending order and extract them in order to obtain the maximum total score.
 
-$$
-\displaylines {
-	(a + b + c) \\% d = 0 \\
-	((a \\% d) + (b \\% d) + (c \\% d)) \\% d = 0
-}
-$$
-
-Since $𝑑=46$, we can create three arrays of length 46 to record the frequency of each remainder.
-
-There are a total of $46^3$ combinations, so we can use three nested $for$ to enumerate all possible cases.
+Since a partial score can be ensured to be greater than half of the full score, the partial score for a given problem will always appear before the corresponding (full score - partial score) in the sorted list. In other words, when extracting scores, the partial score will always be selected before reaching the full score.
