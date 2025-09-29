@@ -196,7 +196,7 @@ public:
 		tail = nullptr;
 	}
 
-// Find the node with the given index; O(log n)
+	// Find the node with the given index; O(log n)
 	SkipListNode* find_by_index(int index) {
 		assert(index >= 0 && index < length && "Index out of range");
 
