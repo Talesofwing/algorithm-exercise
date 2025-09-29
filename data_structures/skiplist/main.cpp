@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 
 #include "SkipList.h"
@@ -31,30 +32,50 @@ ostream& operator<<(ostream& os, const Player& player) {
 int main() {
 	cin.tie(nullptr);
 	ios::sync_with_stdio(false);
-	std::srand(std::time(NULL));
+	// cout << fixed << setprecision(15);
 
+	srand(time(NULL));
+
+	const int count = 2;
 	SkipList<int> sl;
-	for (int i = 0; i < 20; ++i) {
-		sl.insert(i, rand() % 100 + 1);
+	vector<double> scores(count);
+	for (int i = 0; i < count; ++i) {
+		double score = rand() % 100 + 1;
+		scores.emplace_back(score);
+		sl.insert(i, score);
 	}
 
 	cout << "===== Original =====" << endl;
 	sl.display();
 
-	return 0;
-
-	cout << "===== Update =====" << endl;
-	int& hp = sl.at(0);
-	hp = 1000;
+	int index = rand() % count;
+	SkipList<int>::SkipListNode* node = sl.find_by_index(index);
+	cout << "\n===== Update(index = " << index << ", hp = " << node->obj << ") =====" << endl;
+	node->obj = 1000;
 	sl.display();
 
-	cout << "===== Insert =====" << endl;
+	cout << "\n===== Find(index = 1) =====" << endl;
+	node = sl.find_by_index(1);
+	cout << "By Index(1): " << node->obj << endl;
+	cout << "By Score(" << node->score << "): " << sl.find_by_score(node->obj, node->score)->obj << endl;
+	cout << "By Obj(" << node->obj << "): " << sl.find_by_obj(node->obj)->obj << endl;
+
+	cout << "\n===== Remove =====" << endl;
+	sl.remove_by_index(0);
+	sl.remove_by_index(0);
+	sl.display();
+
+	cout << "\n===== Insert =====" << endl;
 	sl.insert(10, 1);
 	sl.insert(100, 10);
 	sl.display();
 
-	cout << "===== Remove =====" << endl;
-	sl.remove(5);
-	sl.remove(1);
+	cout << "\n===== Clear =====" << endl;
+	sl.clear();
+	sl.display();
+
+	cout << "\n===== Insert =====" << endl;
+	sl.insert(10, 5324);
+	sl.insert(5, 123);
 	sl.display();
 }
