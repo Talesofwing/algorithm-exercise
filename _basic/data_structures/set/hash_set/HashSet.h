@@ -12,7 +12,7 @@ public:
 		_map.erase(key);
 	}
 
-	void contains(const K& key) const {
+	bool contains(const K& key) const {
 		return _map.find(key) != _map.end();
 	}
 
