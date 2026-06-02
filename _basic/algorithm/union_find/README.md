@@ -29,7 +29,7 @@ Initialize(parent, size):
 
 Root(node):
     // Path Compression
-    return node is root ? node : node = Root(node);
+    return node is root ? node : node = Root(parent(node));
 
 Same(node1, node2):
     return Root(node1) == Root(node2);
