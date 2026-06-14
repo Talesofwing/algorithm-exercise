@@ -19,13 +19,14 @@ In every sorting algorithm, there are the following characteristics:
 1. [Bubble Sort](bubble-sort/)
 2. [Selection Sort](selection-sort/)
 3. [Insertion Sort](insertion-sort/)
-4. [Merge Sort](merge-sort/)
-5. [Quick Sort](quick-sort/)
-6. [Heap Sort](heap-sort/)
-7. [Counting Sort](counting-sort/)
-8. [Bucket Sort](bucket-sort/)
-9. [Radix Sort](radix-sort/)
-10. [Intro Sort](intro-sort/)
+4. [Shell Sort](shell-sort/)
+5. [Merge Sort](merge-sort/)
+6. [Quick Sort](quick-sort/)
+7. [Heap Sort](heap-sort/)
+8. [Counting Sort](counting-sort/)
+9. [Bucket Sort](bucket-sort/)
+10. [Radix Sort](radix-sort/)
+11. [Intro Sort](intro-sort/)
 
 ### Test
 Uses a total of 8 tests.
@@ -43,6 +44,7 @@ Uses a total of 8 tests.
 | Bubble Sort   		| 100,000   		| 36.29s					 	   								|
 | Selection Sort		| 100,000   		| 11.46s      													|
 | Insertion Sort 		| 100,000   		| 5.94s <br> 3.83s(binary search) <br> 0.13s(memmove) 			|
+| Shell Sort 		    | 1,000,000   	    | 0.27s                                                			|
 | Merge Sort     		| 1,000,000 		| 0.29s(recursive) <br> 0.28s(iterative)  						|
 | Quick Sort     		| 1,000,000 		| 0.12s       													|
 | Heap Sort 	 		| 1,000,000			| 0.26s       													|
@@ -94,5 +96,3 @@ In conclusion, under the worst-case scenario, the performance of all three algor
 `Radix Sort` breaks the sorting task into multiple stages, with each stage focusing on a specific digit of the data. By using `Counting Sort` at each stage, the process remains efficient without encountering issues related to excessively large data ranges.
 
 `Counting Sort` is typically only used for integers or data that can be mapped to an integer range. `Radix Sort`, on the other hand, can be extended to handle strings or other data types that can be represented numerically.
-
-#### Introsort
