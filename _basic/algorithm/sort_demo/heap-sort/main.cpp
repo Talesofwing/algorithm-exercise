@@ -30,21 +30,31 @@ ostream& operator<<(ostream& os, vector<int>& arr) {
 }
 
 void MaxHeapify(vector<int>& arr, int start, int end) {
-	int parent = start;
-	int son = parent * 2 + 1;
+	int value = arr[start];
+	int hole = start;
+	int son = hole * 2 + 1;
 	while (son <= end) {
 		if (son + 1 <= end && arr[son] < arr[son + 1]) {
 			son++;
 		}
 
-		if (arr[parent] > arr[son]) {
-			return;
-		} else {
-			swap(arr[parent], arr[son]);
-			parent = son;
-			son = parent * 2 + 1;
-		}
+		arr[hole] = arr[son];
+		hole = son;
+		son = hole * 2 + 1;
 	}
+
+	while (hole > start) {
+		int parent = (hole - 1) / 2;
+
+		if (arr[parent] >= value) {
+			break;
+		}
+
+		arr[hole] = arr[parent];
+		hole = parent;
+	}
+
+	arr[hole] = value;
 }
 
 void HeapSort(vector<int>& arr) {

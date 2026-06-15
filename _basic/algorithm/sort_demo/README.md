@@ -39,19 +39,20 @@ Uses a total of 8 tests.
 7. Large Elements Count Test
 8. Boundary Test
 
-|		Algorithm		| 	Element Count 	|                  			Time(second)		 				|
-|     		-	 	    |     	  -     	|       						-						      	|
-| Bubble Sort   		| 100,000   		| 36.29s					 	   								|
-| Selection Sort		| 100,000   		| 11.46s      													|
-| Insertion Sort 		| 100,000   		| 5.94s <br> 3.83s(binary search) <br> 0.13s(memmove) 			|
-| Shell Sort 		    | 1,000,000   	    | 0.27s                                                			|
-| Merge Sort     		| 1,000,000 		| 0.29s(recursive) <br> 0.28s(iterative)  						|
-| Quick Sort     		| 1,000,000 		| 0.12s       													|
-| Heap Sort 	 		| 1,000,000			| 0.26s       													|
-| Counting Sort			| 1,000,000			| 0.04s															|
-| Bucket Sort			| 1,000,000			| 0.05s															|
-| Radix Sort			| 1,000,000			| 0.07s															|
-| Intro Sort			| 1,000,000			| 0.11s															|
+|		Algorithm		| 		Element Count		|                  			Time(second)		 				|
+|     		-	 	    |			  -  			|       						-						      	|
+| Bubble Sort   		| 100,000   				| 36.29s					 	   								|
+| Selection Sort		| 100,000   				| 11.46s      													|
+| Insertion Sort 		| 100,000   				| 5.94s <br> 3.83s(binary search) <br> 0.13s(memmove) 			|
+| Shell Sort 		    | 1,000,000   	  		  	| 0.27s                                                			|
+| Merge Sort     		| 1,000,000 				| 0.29s(recursive) <br> 0.28s(iterative)  						|
+| Quick Sort     		| 1,000,000 				| 0.12s       													|
+| Heap Sort 	 		| 1,000,000 <br> 10,000,000	| 0.26s <br> 3.65s												|
+| Heap Sort(Optimized) 	| 1,000,000 <br> 10,000,000 | 0.21s <br> 3.09s       										|
+| Counting Sort			| 1,000,000					| 0.04s															|
+| Bucket Sort			| 1,000,000					| 0.05s															|
+| Radix Sort			| 1,000,000					| 0.07s															|
+| Intro Sort			| 1,000,000					| 0.11s															|
 
 ### Comparison
 #### Bubble Sort & Selection Sort
