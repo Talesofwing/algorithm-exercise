@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <chrono>
 #include <random>
+#include <functional>
 
 using namespace std;
 
@@ -17,78 +18,32 @@ using ll = long long;
 	Using Counting Sort to sort an array in ascending order
 */
 
-ostream& operator<<(ostream& os, vector<int>& arr) {
-	os << "[";
-	rep(i, arr.size()) {
-		os << arr[i];
-		if (i != arr.size() - 1) {
-			os << ", ";
-		}
-	}
-	os << "]";
-	return os;
-}
-
-int GetMax(const std::vector<int>& arr) {
-	int m = abs(arr[0]);
-	for (int i = 1; i < arr.size(); ++i) {
-		m = max(m, abs(arr[i]));
-	}
-	return m;
-}
-
-pair<vector<int>, vector<int>> SeperateNumbers(const vector<int>& arr) {
-	vector<int> negatives, positives;
-	for (int num : arr) {
-		if (num < 0) {
-			negatives.push_back(num);
-		} else {
-			positives.push_back(num);
-		}
-	}
-	return {negatives, positives};
-}
-
-void Sorting(vector<int>& arr) {
-	int m = GetMax(arr);
-	vector<int> counts(m + 1, 0);
-	vector<int> output(arr.size());
-
-	for (int num : arr) {
-		counts[abs(num)]++;
-	}
-
-	for (int i = 1; i <= m; ++i) {
-		counts[i] += counts[i - 1];
-	}
-
-	for (int i = arr.size() - 1; i >= 0; --i) {
-		output[counts[abs(arr[i])] - 1] = arr[i];
-		counts[abs(arr[i])]--;
-	}
-
-	arr = output;
-}
-
 void CountingSort(vector<int>& arr) {
-	auto [negatives, positives] = SeperateNumbers(arr);
-
-	if (!negatives.empty()) {
-		Sorting(negatives);
+	int min = INT_MAX, max = INT_MIN;
+	for (int num : arr) {
+		min = std::min(min, num);
+		max = std::max(max, num);
 	}
 
-	if (!positives.empty()) {
-		Sorting(positives);
+	int offset = -min;
+	vector<int> count(max - min + 1, 0);
+
+	for (int num : arr) {
+		count[num + offset]++;
 	}
 
-	arr.clear();
-
-	for (int i = negatives.size() - 1; i >= 0; --i) {
-		arr.push_back(negatives[i]);
+	for (int i = 1; i < count.size(); i++) {
+		count[i] += count[i - 1];
 	}
 
-	for (int i = 0; i < positives.size(); ++i) {
-		arr.push_back(positives[i]);
+	vector<int> sorted(arr.size());
+	for (int i = arr.size() - 1; i >= 0; i--) {
+		sorted[count[arr[i] + offset] - 1] = arr[i];
+		count[arr[i] + offset]--;
+	}
+
+	for (int i = 0; i < arr.size(); i++) {
+		arr[i] = sorted[i];
 	}
 }
 
