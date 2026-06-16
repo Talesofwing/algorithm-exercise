@@ -51,7 +51,7 @@ Uses a total of 8 tests.
 | Heap Sort(Optimized) 	| 1,000,000 <br> 10,000,000 | 0.21s <br> 3.09s       										|
 | Counting Sort			| 1,000,000					| 0.04s															|
 | Bucket Sort			| 1,000,000					| 0.10s															|
-| Radix Sort			| 1,000,000					| 0.07s															|
+| Radix Sort			| 1,000,000					| 0.29s															|
 | Intro Sort			| 1,000,000					| 0.11s															|
 
 ### Comparison
