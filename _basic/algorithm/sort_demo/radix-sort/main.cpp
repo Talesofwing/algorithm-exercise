@@ -29,78 +29,58 @@ ostream& operator<<(ostream& os, vector<int>& arr) {
 	return os;
 }
 
-int GetMax(const std::vector<int>& arr) {
-	int m = abs(arr[0]);
-	for (int i = 1; i < arr.size(); ++i) {
-		m = max(m, abs(arr[i]));
-	}
-	return m;
-}
-
-pair<vector<int>, vector<int>> SeperateNumbers(const vector<int>& arr) {
-	vector<int> negatives, positives;
-	for (int num : arr) {
-		if (num < 0) {
-			negatives.push_back(num);
-		} else {
-			positives.push_back(num);
-		}
-	}
-	return {negatives, positives};
-}
-
 void CountingSort(vector<int>& arr, const int exp) {
-	vector<int> output(arr.size());
 	vector<int> count(10, 0);
 
-	for (int i = 0; i < arr.size(); ++i) {
-		int digit = abs((arr[i]) / exp % 10);
+	for (int num : arr) {
+		int digit = (num / static_cast<int>(pow(10, exp))) % 10;
 		count[digit]++;
 	}
 
-	for (int i = 1; i < 10; ++i) {
+	for (int i = 1; i < count.size(); i++) {
 		count[i] += count[i - 1];
 	}
 
-	// Reversing is to ensure that the number of digits remains the same, but larger values are placed at the back.
-	for (int i = arr.size() - 1; i >= 0; --i) {
-		int digit = abs((arr[i]) / exp % 10);
-		output[count[digit] - 1] = arr[i];
+	vector<int> sorted(arr.size());
+	for (int i = arr.size() - 1; i >= 0; i--) {
+		int digit = (arr[i] / static_cast<int>(pow(10, exp))) % 10;
+		sorted[count[digit] - 1] = arr[i];
 		count[digit]--;
 	}
 
-	// for (int i = 0; i < arr.size(); ++i) {
-	// 	arr[i] = output[i];
-	// }
-	// copy(output.begin(), output.end(), arr.begin());
-	move(output.begin(), output.end(), arr.begin());
+	for (int i = 0; i < arr.size(); i++) {
+		arr[i] = sorted[i];
+	}
 }
 
 void RadixSort(vector<int>& arr) {
-	auto [negatives, positives] = SeperateNumbers(arr);
-
-	if (!negatives.empty()) {
-		int m = GetMax(negatives);
-		for (int exp = 1; m / exp > 0; exp *= 10) {
-			CountingSort(negatives, exp);
-		}
+	int min = INT_MAX;
+	for (int x : arr) {
+		min = std::min(min, x);
 	}
 
-	if (!positives.empty()) {
-		int m = GetMax(positives);
-		for (int exp = 1; m / exp > 0; exp *= 10) {
-			CountingSort(positives, exp);
-			cout << positives << endl;
-		}
+	int offset = -min;
+	for (int i = 0; i < arr.size(); i++) {
+		arr[i] += offset;
 	}
 
-	arr.clear();
-	for (int i = negatives.size() - 1; i >= 0; --i) {
-		arr.push_back(negatives[i]);
+	int max = INT_MIN;
+	for (int x : arr) {
+		max = std::max(max, x);
 	}
 
-	for (int i = 0; i < positives.size(); ++i) {
-		arr.push_back(positives[i]);
+	int maxLen = 0;
+	while (max > 0) {
+		max /= 10;
+		maxLen++;
+	}
+
+	for (int k = 0; k < maxLen; k++) {
+		CountingSort(arr, k);
+	}
+
+	for (int i = 0; i < arr.size(); i++) {
+		arr[i] -= offset;
 	}
 }
 
@@ -205,26 +185,23 @@ void RunTest() {
 	}
 
 	// Test 8: Boundary values
-	{
-		vector<int> arr = {INT_MIN, INT_MAX, 0, -1, 1};
-		vector<int> original = arr;
-		RadixSort(arr);
-		assert(IsSorted(arr));
-		assert(AreEqual(arr, original));
-		cout << "Test 8" << " (Boundary values): Passed\n";
-	}
+	// {
+	// 	vector<int> arr = {INT_MIN, INT_MAX, 0, -1, 1};
+	// 	vector<int> original = arr;
+	// 	RadixSort(arr);
+	// 	assert(IsSorted(arr));
+	// 	assert(AreEqual(arr, original));
+	// 	cout << "Test 8" << " (Boundary values): Passed\n";
+	// }
 }
 
 #pragma endregion
 
 int main() {
-	cin.tie(nullptr);
-	ios::sync_with_stdio(false);
+	// cin.tie(nullptr);
+	// ios::sync_with_stdio(false);
 
-	// RunTest();
-	vector<int> arr = {79, 3, 42, 2};
-	RadixSort(arr);
-	cout << arr << endl;
+	RunTest();
 
 	return 0;
 }

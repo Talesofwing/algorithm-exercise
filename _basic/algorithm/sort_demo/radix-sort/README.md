@@ -25,5 +25,10 @@ The algorithm proceeds as follows.
 Radix sort is preferred when:
 1. When the digit length of the data is relatively small
 
+## Negative Number Handling
+You can refer to [Counting Sort](../counting-sort/); there are also two common ways:
+- Handle positive and negative numbers separately
+- Shift every value by the minimum negative value (more commonly used)
+
 ## References
 - [Wiki](https://en.wikipedia.org/wiki/Radix_sort)
