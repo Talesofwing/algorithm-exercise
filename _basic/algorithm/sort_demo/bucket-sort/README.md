@@ -12,15 +12,24 @@ The core idea is to distribute the data into buckets, reducing the number of ele
 The algorithm proceeds as follows.
 
 1. **Create Buckets**: Each bucket can be implemented as an array, linked list, or similar structure.
+
+	There is no fixed standard for the number of buckets; people often use around $\sqrt{n}$ buckets, or determine it through tuning.
 2. **Distribute Data into Buckets**: Assign data to different buckets based on specific rules. A common approach is to distribute data into buckets based on its value range. For example, create 10 buckets for the range 0–99, with each bucket responsible for a range of 10 values.
 3. **Sort Each Bucket**: Sort the data within each bucket using an appropriate sorting algorithm.
 4. **Merge Buckets**: Concatenate the sorted data from all the buckets in order.
 
 > The example uses [Insertion Sort](../insertion-sort/).
 
+The more buckets you use, the faster it generally becomes, but the space complexity also increases.
+
 Bucket sort is preferred when:
 1. **Uniformly Distributed Data**: If the data is uniformly distributed, it can be evenly divided among buckets, resulting in fewer elements per bucket. This reduces sorting time within buckets and improves overall efficiency.
 2. **Known and Relatively Small Data Range**: Bucket Sort requires prior knowledge of the data range to create an appropriate number of buckets. If the data range is too large, it requires a large number of buckets, increasing space complexity.
+
+## Negative Number Handling
+You can refer to [Counting Sort](../counting-sort/); there are also two common ways:
+- Handle positive and negative numbers separately
+- Shift every value by the minimum negative value (more commonly used)
 
 ## References
 - [Wiki](https://en.wikipedia.org/wiki/Bucket_sort)
