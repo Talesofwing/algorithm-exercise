@@ -1,63 +1,19 @@
 #include <iostream>
-#include <vector>
 
-using namespace std;
-
-int p[100000], h[100000];
-
-int root(int x) {
-	return p[x] == x ? x : p[x] = root(p[x]);
-}
-
-bool same(int x, int y) {
-	return root(x) == root(y);
-}
-
-void unite(int x, int y) {
-	int X = root(x);
-	int Y = root(y);
-
-	if (X == Y) {
-		return;
-	}
-
-	if (h[X] < h[Y]) {
-		p[X] = Y;
-	} else {
-		p[Y] = X;
-
-		if (h[X] == h[Y]) {
-			h[X]++;
-		}
-	}
-}
+#include "UnionFind.h"
 
 int main() {
-	int N, Q;
-	cin >> N >> Q;
+	UnionFind uf(5);
 
-	for (int i = 0; i < N; ++i) {
-		p[i] = i;
-		h[i] = 0;
-	}
+	std::cout << std::boolalpha;
+	std::cout << uf.Same(0, 1) << '\n';
 
-	vector<string> ans;
-	for (int i = 0; i < Q; ++i) {
-		char q;
-		int x, y;
-		cin >> q >> x >> y;
-		if (q == '0') {
-			unite(x, y);
-		} else if (q == '1') {
-			if (same(x, y)) {
-				ans.push_back("Yes");
-			} else {
-				ans.push_back("No");
-			}
-		}
-	}
+	uf.Unite(0, 1);
+	uf.Unite(2, 3);
+	std::cout << uf.Same(0, 1) << '\n';
+	std::cout << uf.Same(0, 2) << '\n';
 
-	for (int i = 0; i < ans.size(); ++i) {
-		cout << ans[i] << endl;
-	}
+	uf.Unite(1, 2);
+	std::cout << uf.Same(0, 3) << '\n';
+	std::cout << uf.Same(0, 4) << '\n';
 }
