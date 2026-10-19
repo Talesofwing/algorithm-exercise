@@ -3,7 +3,6 @@
 #include <vector>
 #include <queue>
 #include <utility>
-#include <tuple>
 
 struct State {
 public:
@@ -19,7 +18,7 @@ public:
 	int Weight;
 };
 
-inline int Prim(const std::vector<std::vector<std::tuple<int, int, int>>>& graph) {
+inline int Prim(const std::vector<std::vector<std::pair<int, int>>>& graph) {
 	int n = graph.size();
 	if (n == 0) {
 		return 0;
@@ -47,8 +46,8 @@ inline int Prim(const std::vector<std::vector<std::tuple<int, int, int>>>& graph
 		visited[curNode] = true;
 
 		for (const auto& edge : graph[curNode]) {
-			int nextNode = std::get<1>(edge);
-			int nextWeight = std::get<2>(edge);
+			int nextNode = edge.first;
+			int nextWeight = edge.second;
 
 			if (visited[nextNode]) {
 				continue;
